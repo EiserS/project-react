@@ -14,9 +14,9 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="ProductCatalog" element={<ProductCatalog />} />
+            <Route path="productCatalog" element={<ProductCatalog />} />
             <Route path="*" element={<NoPage />} />
-            <Route path="productpage" element={<ProductPage />} />
+            <Route path="productPage/:id" element={<ProductPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

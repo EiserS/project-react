@@ -1,20 +1,22 @@
 import Card from "react-bootstrap/Card";
-import * as product from '../produkty.json'
+import jsonData from '../produkty.json'
 import {ReactElement} from "react";
 import {LinkContainer} from "react-router-bootstrap";
 
+const products = jsonData.products
+
 const itemList: ReactElement[] = []
 
-for (const key in product) {
+for (const key in products) {
     itemList.push(
         <Card style={{float: 'left'}}>
             <Card.Body style={{width: '20rem', height: '20rem'}}>
-                <Card.Title>{product[key].name}</Card.Title>
-                <Card.Subtitle>{product[key].price} zł</Card.Subtitle>
+                <Card.Title>{products[key].name}</Card.Title>
+                <Card.Subtitle>{products[key].price} zł</Card.Subtitle>
                 <Card.Text>
-                    {product[key].description}
+                    {products[key].description}
                 </Card.Text>
-                <LinkContainer to="/ProductPage">
+                <LinkContainer to={"/ProductPage/"+products[key].id}>
                     <Card.Link>Buy</Card.Link>
                 </LinkContainer>
             </Card.Body>

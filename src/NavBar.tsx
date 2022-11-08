@@ -7,8 +7,8 @@ import { LinkContainer } from 'react-router-bootstrap'
 
 function NavBar() {
     return (
-        <Navbar bg="dark" variant="dark" expand="lg">
-            <Container fluid>
+        <Navbar bg="dark" variant="dark" expand="lg" >
+            <Container fluid >
                 <Navbar.Brand href="#">Mój Sklep</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
@@ -20,7 +20,7 @@ function NavBar() {
                         <LinkContainer to="/">
                             <Nav.Link>Home</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="/ProductCatalog">
+                        <LinkContainer to="/productCatalog">
                             <Nav.Link>Product</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/contact">
