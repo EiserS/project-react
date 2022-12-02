@@ -1,15 +1,7 @@
 import {Card} from "react-bootstrap";
 import jsonData from '../produkty.json'
 import {useParams} from "react-router-dom";
-
-interface Product {
-    id: string,
-    name: string,
-    category: string,
-    price: string,
-    description: string,
-    photos: string[],
-}
+import {Product} from "../Product";
 
 const products = jsonData.products as Product[]
 
@@ -17,9 +9,9 @@ const products = jsonData.products as Product[]
 const ProductPage = () => {
     // We can use the `useParams` hook here to access
     // the dynamic pieces of the URL.
-    let { id } = useParams();
+    let {productId} = useParams();
 
-    const parsedId = String(id)
+    const parsedId = String(productId)
     const product = products.find(product => product.id === parsedId)
 
     if (product === undefined) {
